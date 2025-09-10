@@ -1,0 +1,4 @@
+streamlit==1.38.0
+PyPDF2==3.0.1
+huggingface-hub==0.24.6
+pdfkit==1.0.0
