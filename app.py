@@ -33,7 +33,8 @@ if uploaded_files is not None and len(uploaded_files) > 0:
         st.text_area("Extracted Text Preview", all_text[:2000], height=200)
     
     # User inputs
-    num_questions = st.number_input("Number of questions", min_value=1, max_value=min(20, len(chunks)), value=5)
+    default_questions = min(5, max(1, len(chunks)))  # Dynamic default to avoid exceeding max_value
+    num_questions = st.number_input("Number of questions", min_value=1, max_value=min(20, len(chunks)), value=default_questions)
     difficulty = st.selectbox("Difficulty Level", ["Easy", "Medium", "Hard"])
     exam_type = st.selectbox("Exam Type", ["Prelims (MCQ)", "Mains (Descriptive)"])
     
@@ -174,4 +175,3 @@ else:
     - Install wkhtmltopdf for PDF generation: Follow instructions at https://wkhtmltopdf.org/
     - Run with: `streamlit run app.py`
     """)
-
