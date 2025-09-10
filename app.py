@@ -89,7 +89,7 @@ Question: [Your question here, e.g., Critically analyze..., Discuss the implicat
                     try:
                         output = client.text_generation(
                             prompt,
-                            model="google/flan-t5-large",
+                            model="mistralai/Mixtral-8x7B-Instruct-v0.1",
                             max_new_tokens=300,
                             temperature=0.7,
                             do_sample=True
